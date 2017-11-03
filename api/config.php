@@ -1,10 +1,21 @@
 <?php
 
 // Adatbázis kapcsolat beállításai.
-define("DBNAME", "bestyellow");
-define("DBUSER", "bestyellow");
-define("DBPASSWORD", "BVxfn7gaLppkcSty");
+define("DBNAME", "movies4");
+define("DBUSER", "movies4");
+define("DBPASSWORD", "movies4");
 
+
+// Routing (útválasztó) beállításai.
+define("PREFIX", "api");
+define("SQLDIR", "sql");
+$router = array(
+    // Select kérések.
+    "/movies" => "all_movie.sql",
+
+);
+//Eredeti:
+/*
 // Routing (útválasztó) beállításai.
 define("PREFIX", "api");
 define("SQLDIR", "sql");
@@ -21,3 +32,4 @@ $router = array(
     // Delete kérések.
     "/customers/delete/:id" => "delete_customer.sql"
 );
+*/

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>GSzJ Filmforgalmazó</title>
+</head>
+
+<body>
+    <div class="btn-group">
+        <button class="movies-btn">Filmek</button>
+        <button class="genre-btn">Műfajok</button>
+        <button class="stock-btn">Készlet</button>
+        <button class="shops-btn">Boltok</button>
+        <button class="cinemas-btn">Mozik</button>
+    </div>
+    <div class="div">
+        <table id="table" class="table table-hover">
+            <thead>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="js/index.js"></script>
+    <script>
+        var tableData = [];
+        var targetTable = document.querySelector("#table");
+        var dict = {};
+        getJson("js/dict.json", function (json) {
+            dict = json;
+        });
+
+        document.querySelector(".movies-btn")
+            .addEventListener("click", function () {
+                getJson("/movies", function (movies) {
+                    tableData = movies;
+                    fillTable(tableData);
+                });
+            });
+
+        function fillTable(data) {
+            // Fejléc generálása.
+            var head = "";
+            for (var k in data[0]) {
+                head += "<th>" + (dict[k] || "-") + "</th>";
+            }
+            targetTable.querySelector("thead tr").innerHTML = head;
+
+            var content = "";
+            for (var k in data) {
+                var tr = "<tr>";
+                for (var j in data[k]) {
+                    tr += "<td>" + data[k][j] + "</td>";
+                }
+                content += tr + "</tr>";
+            }
+            targetTable.querySelector("tbody").innerHTML = content;
+        }
+
+        document.querySelector(".movies-btn")
+            .addEventListener("click", function () {
+                getJson("/movies", function (movies) {
+                    tableData = movies;
+                    fillTable(tableData);
+                });
+            });
+    </script>
+</body>
+
+</html>
