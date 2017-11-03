@@ -11,7 +11,8 @@
 
 <body>
     <div class="btn-group">
-        <button class="movies-btn">Filmek</button>
+        <button class="movies-btn">Filmek
+        </button>
         <button class="genre-btn">Műfajok</button>
         <button class="stock-btn">Készlet</button>
         <button class="shops-btn">Boltok</button>
@@ -20,24 +21,27 @@
     <div class="div">
         <table id="table" class="table table-hover">
             <thead>
+                <tr>
+                    <th></th>
+                </tr>
             </thead>
-            <tbody>
-            </tbody>
+            <tbody></tbody>
         </table>
     </div>
 
     <script src="js/index.js"></script>
+
     <script>
         var tableData = [];
         var targetTable = document.querySelector("#table");
         var dict = {};
-        getJson("js/dict.json", function (json) {
-            dict = json;
-        });
+        /* getJson("js/dict.json", function (json) {
+             dict = json;
+         });*/
 
         document.querySelector(".movies-btn")
             .addEventListener("click", function () {
-                getJson("/movies", function (movies) {
+                getJson("api/movies", function (movies) {
                     tableData = movies;
                     fillTable(tableData);
                 });
@@ -64,12 +68,13 @@
 
         document.querySelector(".movies-btn")
             .addEventListener("click", function () {
-                getJson("/movies", function (movies) {
+                getJson("api/movies", function (movies) {
                     tableData = movies;
                     fillTable(tableData);
                 });
             });
     </script>
+
 </body>
 
 </html>
