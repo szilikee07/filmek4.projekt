@@ -1,10 +1,17 @@
 {
-    "customer_id": "Az.",
-    "customer_name": "Név",
-    "address": "Cím",
-    "postcode": "Irsz.",
-    "product_id": "Az.",
-    "product_name": "Név",
-    "product_category_id": "Kat.",
-    "product_price": "Ár"
+    "movie_id": "FilmID",
+    "movie_title": "Cím",
+    "director": "Rendező",
+    "artist1": "Főszereplő",
+    "artist2": "Főszereplő2",
+    "year": "Év",
+    "genre_id": "Műfaj Kód",
+    "cinema_id": "Mozi kód",
+    "cinema_name": "Mozi neve",
+    "cinema_city": "Város",
+    "rooms": "Termek száma",
+    "active": "Működik",
+    "genre_name": "Műfaj",
+    "genre_example_movie": "Példa film",
+
 }

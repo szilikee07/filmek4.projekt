@@ -10,6 +10,7 @@
 </head>
 
 <body>
+    <p>http://localhost/filmek4.projekt/index.html</p>
     <div class="btn-group">
         <button class="movies-btn">Filmek
         </button>
@@ -35,9 +36,9 @@
         var tableData = [];
         var targetTable = document.querySelector("#table");
         var dict = {};
-        /* getJson("js/dict.json", function (json) {
-             dict = json;
-         });*/
+        getJson("js/dict.json", function (json) {
+            dict = json;
+        });
 
         document.querySelector(".movies-btn")
             .addEventListener("click", function () {
