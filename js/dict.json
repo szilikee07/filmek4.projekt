@@ -12,6 +12,17 @@
     "rooms": "Termek száma",
     "active": "Működik",
     "genre_name": "Műfaj",
-    "genre_example_movie": "Példa film"
-
+    "genre_example_movie": "Példa film",
+    "genre_example_actor": "Példa színész",
+    "genre_example_director": "Példa rendező",
+    "shop_id": "BoltID",
+    "shop_name": "Bolt",
+    "shop_city": "Város",
+    "shop_adress": "Cím",
+    "staff": "Dolgozók",
+    "type": "Típus",
+    "stock": "Készlet",
+    "sold": "Eladva",
+    "price": "Ár",
+    "orderable": "Rendelhető",
 }

@@ -12,8 +12,7 @@
 <body>
     <p>http://localhost/filmek4.projekt/index.html</p>
     <div class="btn-group">
-        <button class="movies-btn">Filmek
-        </button>
+        <button class="movies-btn">Filmek</button>
         <button class="genre-btn">Műfajok</button>
         <button class="stock-btn">Készlet</button>
         <button class="shops-btn">Boltok</button>
@@ -47,6 +46,34 @@
                     fillTable(tableData);
                 });
             });
+        document.querySelector(".genre-btn")
+            .addEventListener("click", function () {
+                getJson("api/genre", function (genre) {
+                    tableData = genre;
+                    fillTable(tableData);
+                });
+            });
+        document.querySelector(".stock-btn")
+            .addEventListener("click", function () {
+                getJson("api/stock", function (stock) {
+                    tableData = stock;
+                    fillTable(tableData);
+                });
+            });
+        document.querySelector(".shops-btn")
+            .addEventListener("click", function () {
+                getJson("api/shops", function (shops) {
+                    tableData = shops;
+                    fillTable(tableData);
+                });
+            });
+        document.querySelector(".cinemas-btn")
+            .addEventListener("click", function () {
+                getJson("api/cinemas", function (cinemas) {
+                    tableData = cinemas;
+                    fillTable(tableData);
+                });
+            });
 
         function fillTable(data) {
             // Fejléc generálása.
@@ -55,6 +82,7 @@
                 head += "<th>" + (dict[k] || "-") + "</th>";
             }
             targetTable.querySelector("thead tr").innerHTML = head;
+
 
             var content = "";
             for (var k in data) {
@@ -66,14 +94,6 @@
             }
             targetTable.querySelector("tbody").innerHTML = content;
         }
-
-        document.querySelector(".movies-btn")
-            .addEventListener("click", function () {
-                getJson("api/movies", function (movies) {
-                    tableData = movies;
-                    fillTable(tableData);
-                });
-            });
     </script>
 
 </body>

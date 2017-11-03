@@ -12,6 +12,10 @@ define("SQLDIR", "sql");
 $router = array(
     // Select kérések.
     "/movies" => "all_movie.sql",
+    "/genre" => "all_genre.sql",
+    "/stock" => "all_stock.sql",
+    "/shops" => "all_shops.sql",
+    "/cinemas" => "all_cinemas.sql",
 
 );
 //Eredeti:
