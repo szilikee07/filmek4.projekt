@@ -16,6 +16,7 @@ $router = array(
     "/stock" => "all_stock.sql",
     "/shops" => "all_shops.sql",
     "/cinemas" => "all_cinemas.sql",
+    
 
 );
 //Eredeti:

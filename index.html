@@ -79,6 +79,13 @@
                     </div>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-md-6 row-height">
+                    <div class="btn-group">
+                        <input type="button" class="btn btn-primary del" data-type="del" value="Törlés">
+                    </div>
+                </div>
+            </div>
 
         </div>
     </div>
@@ -148,6 +155,10 @@
                     tableData = cinemas;
                     fillTable(tableData);
                 });
+            });
+        document.querySelector(".del")
+            .addEventListener("click", function () {
+                parseInt(window.prompt("Adj meg egy ID-t!"))
             });
 
         function fillTable(data) {
