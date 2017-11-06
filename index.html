@@ -98,7 +98,6 @@
             <tbody>
                 <tr>
                     <td>
-
                     </td>
                 </tr>
             </tbody>
@@ -166,8 +165,8 @@
                 for (var j in data[k]) {
                     tr += "<td>" + data[k][j] + "</td>";
                 }
-                content += tr + "</tr>" + "<button>Szerkesztés</button>" +
-                    "<button> Törlés </button>";
+                content += tr + "<td><button>Szerkesztés</button></td>" +
+                    "<td><button>Törlés</button></td>" + "</tr>";
             }
             targetTable.querySelector("tbody").innerHTML = content;
         }
